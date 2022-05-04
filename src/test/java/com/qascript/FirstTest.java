@@ -15,7 +15,9 @@ public class FirstTest {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
-        options.addArguments("disable-gpu");
+        options.addArguments("no-sandbox");
+        options.addArguments("disable-dev-shm-usage");
+#        options.addArguments("disable-gpu");
         driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
         System.out.println("Title of the page is: " + driver.getTitle());
